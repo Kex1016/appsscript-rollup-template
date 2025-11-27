@@ -21,8 +21,7 @@ if (minifyCode) {
 		},
 	});
 	if (!minified.code) {
-		console.log("error");
-		process.exit(0);
+		throw new Error("minifier failed");
 	}
 	await fs.writeFile(
 		join(__dirname, "..", "dist", "bundle.js"),
