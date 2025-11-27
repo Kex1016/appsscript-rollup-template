@@ -1,0 +1,41 @@
+{
+	"dependencies": {
+		"apps-script-oauth2": "github:googleworkspace/apps-script-oauth2",
+		"terser": "^5.44.0"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.37.0",
+		"@google/clasp": "^3.1.3",
+		"@rollup/plugin-commonjs": "^28.0.6",
+		"@rollup/plugin-node-resolve": "^16.0.2",
+		"@rollup/plugin-typescript": "^12.1.4",
+		"@types/bun": "latest",
+		"@types/google-apps-script": "^2.0.5",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-googleappsscript": "^1.0.5",
+		"eslint-plugin-import": "^2.32.0",
+		"eslint-plugin-jsonc": "^2.21.0",
+		"eslint-plugin-prettier": "^5.5.4",
+		"eslint-plugin-simple-import-sort": "^12.1.1",
+		"globals": "^16.4.0",
+		"prettier": "^3.6.2",
+		"query-string": "^9.3.1",
+		"rollup": "^4.52.4",
+		"typescript-eslint": "^8.45.0"
+	},
+	"module": "index.ts",
+	"name": "appscript-rollup",
+	"peerDependencies": {
+		"typescript": "^5"
+	},
+	"private": true,
+	"scripts": {
+		"lint": "bunx @biomejs/biome check --fix",
+		"prebuild": "bun run lint",
+		"build": "rollup -c && cp appsscript.json dist",
+		"postbuild": "bunx prettier --write dist/**/*.js && bun run tools/trim.js",
+		"publish": "bun run build && bun run upload",
+		"upload": "bunx clasp push"
+	},
+	"type": "module"
+}

@@ -1,0 +1,10 @@
+{
+	"dependencies": {},
+	"exceptionLogging": "STACKDRIVER",
+	"oauthScopes": [
+		"https://mail.google.com/",
+		"https://www.googleapis.com/auth/spreadsheets"
+	],
+	"runtimeVersion": "V8",
+	"timeZone": "Europe/Budapest"
+}

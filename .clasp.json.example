@@ -1,0 +1,9 @@
+{
+	"filePushOrder": [],
+	"htmlExtensions": [".html"],
+	"jsonExtensions": [".json"],
+	"rootDir": "dist",
+	"scriptExtensions": [".js", ".gs"],
+	"scriptId": "",
+	"skipSubdirectories": false
+}
