@@ -1,14 +1,14 @@
 # Google Apps Script Rollup template
 
-Powered by [Bun]()! Bring your own IDE and packages from npm to edit your Google Apps Scripts!
+Powered by [Bun](https://bun.sh)! Bring your own IDE and packages from npm to edit your Google Apps Scripts!
 
 ## Usage
 
 1. Use this template to make a new repository.
 1. Clone it to your machine, and run `bun install` in its directory.
-1. Copy `appsscript.json.example` to `appsscript.json` and add your required [permissions]()
-    - You can also delete the default permissions I provided, they are there... well, for examples of course.
-1. Copy `.clasp.json.example` to `.clasp.json` and add your script's ID
+1. Copy `appsscript.json.example` to `appsscript.json` and add the permissions you need.
+    - You can also delete the default permissions I provided if you want, they are there... well, for examples of course.
+1. Open the API manager with `bunx clasp open-api-console`.
 1. [Enable the Google Apps Script API](https://script.google.com/home/usersettings)
 1. Login to Google with `bunx clasp login`.
 1. Write your code in `src`
@@ -17,7 +17,7 @@ Powered by [Bun]()! Bring your own IDE and packages from npm to edit your Google
 
 ### Linting
 
-Linting is done using [Biome](), it will also write all its non-destructive fixes by default.
+Linting is done using [Biome](https://biomejs.dev), it will also write all its non-destructive fixes by default.
 
 ```sh
 bun run lint
@@ -82,4 +82,4 @@ Another caveat is with a lot of external functions or larger libraries your bund
 
 The minifier is literally just `tools/trim.js`. You can edit its behavior however you see fit. By default it:
 - Removes all the export lines, as Apps Script does not support them.
-- Minifies the output using [terser]().
+- Minifies the output using [terser](https://terser.org).
